@@ -1745,8 +1745,8 @@ img {
 
   .work-card {
     position: absolute !important;
-    top: 44% !important;
-    width: calc(100% - 40px) !important;
+    top: 38% !important;
+    width: calc(100% - 24px) !important;
     max-width: 100% !important;
   }
 
@@ -1756,16 +1756,16 @@ img {
   }
 
   .work-img-placeholder {
-    height: 220px !important;
-    padding: 16px 20px !important;
+    height: 260px !important;
+    padding: 12px 16px !important;
   }
 
   .work-img {
-    height: 220px !important;
+    height: 260px !important;
   }
 
   .mock-image-content {
-    height: 130px !important;
+    height: 170px !important;
   }
 
   .work-info {
