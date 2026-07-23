@@ -559,9 +559,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Higher scrollPerCard values make card scrolling slower and more controllable.
     // Higher scrub value creates smooth luxury inertia.
-    const scrollPerCard = isMobile() ? 240 : 360;
+    const scrollPerCard = isMobile() ? 480 : 360;
     const totalScroll = (cards.length - 1) * scrollPerCard;
-    const scrubValue = isMobile() ? 1.0 : 1.5;
+    const scrubValue = isMobile() ? 1.6 : 1.5;
 
     const tl = gsap.timeline({
       scrollTrigger: {
