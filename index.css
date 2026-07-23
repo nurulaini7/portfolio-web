@@ -2020,8 +2020,8 @@ img {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(10, 15, 31, 0.75);
@@ -2029,10 +2029,15 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 18px;
   cursor: pointer;
   z-index: 2;
-  transition: var(--transition);
+  opacity: 0.25;
+  transition: opacity 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.modal-preview:hover .modal-slide-btn {
+  opacity: 1;
 }
 
 .modal-slide-btn:hover {
@@ -2041,11 +2046,11 @@ img {
 }
 
 .modal-slide-prev {
-  left: 16px;
+  left: 8px;
 }
 
 .modal-slide-next {
-  right: 16px;
+  right: 8px;
 }
 
 .modal-slide-indicators {
@@ -2165,6 +2170,10 @@ img {
 
   .work-section .section-header {
     top: 30px !important;
+  }
+
+  .modal-slide-btn {
+    opacity: 0.45 !important;
   }
 
   .modal-body {
