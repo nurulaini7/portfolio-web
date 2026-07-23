@@ -344,13 +344,13 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: 'Sistem Deteksi Organ Kelapa Sawit (RF-DETR)',
       category: 'Machine Learning',
-      date: 'June 2025',
+      date: 'May 2025',
       description:
-        'Model computer vision berbasis Transformer (RF-DETR) yang dilatih menggunakan Google Colab untuk mendeteksi organ kelapa sawit (bunga betina, bunga jantan hidup/mati, serta tandan buah matang/mentah). Model ini berhasil mencapai akurasi deteksi rata-rata (mAP@0.50) sebesar 93.3% untuk klasifikasi kelayakan panen.',
+        'Model computer vision berbasis Transformer (RF-DETR) yang dilatih menggunakan Google Colab untuk mendeteksi organ kelapa sawit (bunga betina, bunga jantan hidup/mati, serta tandan buah matang/mentah). Model ini berhasil mencapai akurasi deteksi rata-rata (mAP@0.50) sebesar 93.3%.',
       tags: ['Python', 'PyTorch', 'Google Colab', 'RF-DETR', 'Object Detection', 'Roboflow'],
       gradient: 'grad-2',
       media: [
-        { type: 'image', src: 'assets/p2.png', alt: 'Oil Palm Organ Detection Model' }
+        { type: 'image', src: 'assets/ars.png', alt: 'Oil Palm Organ Detection Model' }
       ],
       link: 'https://colab.research.google.com/github/nurulaini7/portfolio-web/blob/main/Train_RF-DETR_With_WeightClass.ipynb',
       linkLabel: 'Open Google Colab'
