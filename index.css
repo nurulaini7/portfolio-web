@@ -1737,7 +1737,7 @@ img {
 
   .work-card {
     position: absolute !important;
-    top: 53% !important;
+    top: 44% !important;
     width: calc(100% - 40px) !important;
     max-width: 100% !important;
   }
