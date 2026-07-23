@@ -823,7 +823,7 @@ img {
   top: 54%;
   left: 50%;
   width: calc(100% - 72px);
-  max-width: 820px;
+  max-width: 660px;
   border-radius: 24px;
   background: transparent;
   will-change: transform;
@@ -854,7 +854,7 @@ img {
 
 .work-img-placeholder {
   width: 100%;
-  height: 320px;
+  height: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -864,7 +864,7 @@ img {
 
 .work-img {
   width: 100%;
-  height: 320px;
+  height: 380px;
   object-fit: cover;
   transition: transform 0.6s var(--ease);
   display: block;
@@ -915,7 +915,7 @@ img {
 .mock-image-content {
   padding: 0 !important;
   min-height: auto !important;
-  height: 200px;
+  height: 260px;
   overflow: hidden;
 }
 
@@ -1702,7 +1702,7 @@ img {
     position: absolute !important;
     top: 51% !important;
     width: calc(100% - 72px) !important;
-    max-width: 820px !important;
+    max-width: 660px !important;
   }
 
   .work-card-inner {
@@ -1711,8 +1711,16 @@ img {
   }
 
   .work-img-placeholder {
-    height: 240px !important;
+    height: 320px !important;
     padding: 24px !important;
+  }
+
+  .work-img {
+    height: 320px !important;
+  }
+
+  .mock-image-content {
+    height: 200px !important;
   }
 
   .work-info {
