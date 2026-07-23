@@ -1729,15 +1729,15 @@ img {
 @media (max-width: 640px) {
   .work-cards-wrapper {
     position: relative;
-    height: 80vh !important;
-    min-height: 560px !important;
+    height: 90vh !important;
+    min-height: 620px !important;
     padding: 85px 14px 24px;
     overflow: hidden;
   }
 
   .work-card {
     position: absolute !important;
-    top: 58% !important;
+    top: 53% !important;
     width: calc(100% - 40px) !important;
     max-width: 100% !important;
   }
@@ -1748,16 +1748,16 @@ img {
   }
 
   .work-img-placeholder {
-    height: 180px !important;
-    padding: 20px !important;
+    height: 220px !important;
+    padding: 16px 20px !important;
   }
 
   .work-img {
-    height: 180px !important;
+    height: 220px !important;
   }
 
   .mock-image-content {
-    height: 100px !important;
+    height: 130px !important;
   }
 
   .work-info {
