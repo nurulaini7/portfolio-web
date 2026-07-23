@@ -1996,7 +1996,13 @@ img {
   box-sizing: border-box;
 }
 
-.modal-preview-placeholder img,
+.modal-preview-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  border-radius: calc(var(--radius-lg) - 4px);
+}
+
 .modal-preview-placeholder iframe {
   width: 100%;
   height: 100%;
