@@ -336,7 +336,6 @@ document.addEventListener('DOMContentLoaded', () => {
       gradient: 'grad-1',
       media: [
         { type: 'video', src: 'assets/demo.mp4', alt: 'Demo Video' },
-        { type: 'image', src: 'assets/p1.png', alt: 'Project preview 1' },
       ],
       link: 'https://github.com/nrlaini04/Deteksi-Green-Bean-Kopi',
       linkLabel: 'View GitHub Code'
@@ -350,7 +349,8 @@ document.addEventListener('DOMContentLoaded', () => {
       tags: ['Python', 'PyTorch', 'Google Colab', 'RF-DETR', 'Object Detection', 'Roboflow'],
       gradient: 'grad-2',
       media: [
-        { type: 'image', src: 'assets/ars.png', alt: 'Oil Palm Organ Detection Model' }
+        { type: 'image', src: 'assets/ars.png', alt: 'arsitektur' },
+        { type: 'image', src: 'assets/code.png', alt: 'codeTrain' },
       ],
       link: 'https://colab.research.google.com/github/nurulaini7/portfolio-web/blob/main/Train_RF-DETR_With_WeightClass.ipynb',
       linkLabel: 'Open Google Colab'
