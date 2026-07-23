@@ -331,27 +331,29 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'Computer Vision',
       date: 'June 2026',
       description:
-        'This is my finale project for undergraduate thesis, utilizing computer vision and deep learning to detect defects in green coffee beans and determine their quality. Using YOLOv11 instance segmentation method. Using API for the Backend best model and flutter for mobile implementation.',
+        'This is my finale project for undergraduate thesis, utilizing computer vision and deep learning to detect defects in green coffee beans and determine their quality. Using YOLOv11 instance segmentation method. Using API for the best model and flutter for mobile application.',
       tags: ['Python', 'Computer Vision', 'Deep Learning', "Roboflow", "YOLOv11", "Instance Segmentation"],
       gradient: 'grad-1',
       media: [
         { type: 'video', src: 'assets/demo.mp4', alt: 'Demo Video' },
+        { type: 'image', src: 'assets/p1.png', alt: 'Project preview 1' },
       ],
-      link: 'https://github.com/nrlaini04/Deteksi-Green-Bean-Kopi' // <-- Masukkan link proyek Anda di sini
+      link: 'https://github.com/nrlaini04/Deteksi-Green-Bean-Kopi',
+      linkLabel: 'View GitHub Code'
     },
     {
-      title: 'Deteksi Organ Tumbuhan Sawit',
-      category: 'Website Design',
-      date: 'May 2026',
+      title: 'Sistem Deteksi Organ Kelapa Sawit (RF-DETR)',
+      category: 'Machine Learning',
+      date: 'June 2025',
       description:
-        'Complete website redesign for Helve, a modern tech startup. The project involved rethinking information architecture, creating a compelling visual narrative, and optimizing for conversion.',
-      tags: ['UI Design', 'Web Design', 'Responsive', 'Wireframing', 'Brand Strategy'],
+        'Model computer vision berbasis Transformer (RF-DETR) yang dilatih menggunakan Google Colab untuk mendeteksi organ kelapa sawit (bunga betina, bunga jantan hidup/mati, serta tandan buah matang/mentah). Model ini berhasil mencapai akurasi deteksi rata-rata (mAP@0.50) sebesar 89.5% untuk klasifikasi kelayakan panen.',
+      tags: ['Python', 'PyTorch', 'Google Colab', 'RF-DETR', 'Object Detection', 'Roboflow'],
       gradient: 'grad-2',
       media: [
-        { type: 'image', src: 'assets/p1.png', alt: 'Helve preview 1' },
-        { type: 'image', src: 'assets/p1.png', alt: 'Helve preview 2' },
+        { type: 'image', src: 'assets/p2.png', alt: 'Oil Palm Organ Detection Model' }
       ],
-      link: '#' // Gunakan '#' jika belum ada link
+      link: 'https://colab.research.google.com/github/nurulaini7/portfolio-web/blob/main/Train_RF-DETR_With_WeightClass.ipynb',
+      linkLabel: 'Open Google Colab'
     },
     {
       title: 'UI/UX Agency Design',
