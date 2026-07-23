@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Nurul Aini Portfolio</title>
+    <link rel="icon" href="data:,">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css?v=61">
+</head>
+
+<body>
+
+    <!-- 3D Liquid Wave Background -->
+    <canvas id="liquid-canvas"></canvas>
+
+    <!-- Floating Right Sidebar Navigation -->
+    <aside class="sidebar-nav" id="sidebar-nav">
+        <a href="#hero" class="nav-dot active" aria-label="Home" data-section="hero">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+        </a>
+        <a href="#about" class="nav-dot" aria-label="About" data-section="about">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+            </svg>
+        </a>
+        <a href="#experience" class="nav-dot" aria-label="Experience" data-section="experience">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+        </a>
+        <a href="#work" class="nav-dot" aria-label="Work" data-section="work">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+        </a>
+        <a href="#skills" class="nav-dot" aria-label="Skills" data-section="skills">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+            </svg>
+        </a>
+        <a href="#tools" class="nav-dot" aria-label="Tools" data-section="tools">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="3" />
+                <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+        </a>
+        <a href="#contact" class="nav-dot" aria-label="Contact" data-section="contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+            </svg>
+        </a>
+    </aside>
+
+    <!-- Project Detail Modal -->
+    <div class="project-modal-overlay" id="projectModal">
+        <div class="project-modal">
+            <button class="modal-close-btn" id="modalClose" aria-label="Close modal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <div class="modal-content">
+                <div class="modal-header-section">
+                    <span class="modal-category" id="modalCategory"></span>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <span class="modal-date" id="modalDate"></span>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-preview" id="modalPreview">
+                        <div class="modal-preview-container">
+                            <button class="modal-slide-btn modal-slide-prev" type="button" id="modalPrevBtn"
+                                aria-label="Previous image">‹</button>
+                            <div class="modal-preview-placeholder grad-1" id="modalPreviewPlaceholder">
+                                <span class="modal-preview-icon">🖥️</span>
+                            </div>
+                            <button class="modal-slide-btn modal-slide-next" type="button" id="modalNextBtn"
+                                aria-label="Next image">›</button>
+                        </div>
+                        <div class="modal-slide-indicators" id="modalSlideIndicators"></div>
+                    </div>
+                    <div class="modal-details-section">
+                        <h3 class="modal-subheading">Project Overview</h3>
+                        <p class="modal-description" id="modalDescription">No description available.</p>
+                        <div class="modal-tags" id="modalTags"></div>
+                        <a href="#" class="modal-visit-btn" id="modalVisitBtn">
+                            <span>Visit Live Site</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7" />
+                                <polyline points="7 7 17 7 17 17" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Wrapper with Grid Border Lines -->
+    <div class="content-wrapper">
+
+
+
+        <!-- Header -->
+        <header class="header" id="header">
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <span>Nurul Aini</span>
+                </a>
+                <div class="header-status">
+                    <span class="pulse-dot"></span>
+                    <span>Looking For A Job</span>
+                </div>
+                <div class="header-location">
+                    <span class="loc-city">Medan, Sumatera Utara</span>
+                    <span class="loc-country">Indonesia</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="section hero-section">
+            <div class="section-inner">
+                <!-- Hero Photo -->
+                <div class="hero-photo-container reveal-up" data-delay="0">
+                    <div class="hero-photo-frame">
+                        <img src="assets/profil.jpeg" alt="Ridhwan - Creative Web Designer" class="hero-photo">
+                    </div>
+                </div>
+
+                <!-- Cursive Name Overlay -->
+                <h1 class="hero-name reveal-up" data-delay="200">Aini</h1>
+
+                <!-- Subtitle -->
+                <p class="hero-subtitle reveal-up" data-delay="400">Hi, I'm <strong>Nurul Aini</strong>,<br>Fresh
+                    Graduate from Information Technology with interest on
+                    <strong>Machine Learning, Data Science, Data Analyst </strong> and <strong> Front End Web
+                        development</strong>
+                </p>
+
+                <!-- Social Icons -->
+                <div class="hero-socials reveal-up" data-delay="500">
+                    <a href="linkedin.com/in/nurul-aini-454045251" class="social-circle" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/aini.nr_7" class="social-circle" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-circle" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hero-ctas reveal-up" data-delay="600">
+                    <a href="#about" class="btn-primary">
+                        <span>Get Started</span>
+                        <span class="btn-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7" />
+                                <polyline points="7 7 17 7 17 17" />
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#work" class="btn-secondary">My Project</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT & SKILLS SECTION -->
+        <section id="about" class="section about-section">
+            <div class="section-inner">
+                <div class="section-header reveal-up">
+                    <span class="section-bullet">•</span>
+                    <span class="section-label">About Me</span>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text reveal-up" data-delay="100">
+                        <p>Fresh graduate from Information Technology, Universitas Sumatera Utara, with experience and
+                            interest in Machine Learning (AI/ML), Data Analysis, Data Science, and Front-End Web
+                            Development. I served as a Machine Learning Engineer Intern at the Indonesian Oil Palm
+                            Research Institute (IOPRI), developing computer vision-based object detection models.</p>
+                        <p>During my college years, I was actively involved in student organizations, being a staff in
+                            Research & Technology division in BEM Fasilkom-TI, a member of the events committee for
+                            welcoming a new students, and participating as a member of GDSC / Google Developer Group on
+                            Campus USU. I am able to contribute professionally through strong teamwork and good time
+                            management skills. </p>
+                    </div>
+                    <div class="about-photo-card reveal-up" data-delay="200">
+                        <img src="assets/profil.jpeg" alt="Nurul Aini" class="about-photo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCES SECTION -->
+        <section id="experience" class="section experience-section">
+            <div class="section-inner">
+                <div class="section-header reveal-up">
+                    <span class="section-bullet">•</span>
+                    <span class="section-label">Experience</span>
+                </div>
+
+                <!-- Interactive Tab Selector -->
+                <div class="exp-tabs-container reveal-up" data-delay="150">
+                    <button class="exp-tab-btn active" data-tab="work">
+                        Work Experience
+                    </button>
+                    <button class="exp-tab-btn" data-tab="org">
+                        Organization Experience
+                    </button>
+                </div>
+
+                <!-- Timeline for Work Experience -->
+                <div class="experience-timeline active" id="timeline-work">
+                    <!-- Experience 1: IOPRI Intern -->
+                    <div class="exp-item reveal-up" data-delay="200">
+                        <div class="exp-year">
+                            <span class="exp-year-num">2025</span>
+                            <span class="exp-year-label">Feb - Mar</span>
+                        </div>
+                        <div class="exp-content">
+                            <h3 class="exp-title">Machine Learning Engineer Intern</h3>
+                            <span class="exp-company">Indonesian Oil Palm Research Institute (IOPRI) • Internship</span>
+                            <ul class="exp-bullets">
+                                <li>Collected, cleaned, and processed agricultural image datasets to train Machine
+                                    Learning models for oil palm reproductive organ classification.</li>
+                                <li>Experimented with and benchmarked multiple object detection architectures (YOLOv5,
+                                    YOLOv8, and RT-DETR), optimizing model hyperparameters to achieve high accuracy on
+                                    custom datasets.</li>
+                                <li>Performed data preprocessing, data annotation, and augmentation using Roboflow
+                                    tools, mitigating class imbalance and improving model regularization.</li>
+                                <li>Utilized Python, PyTorch, OpenCV, and Pandas throughout the ML workflow covering
+                                    data ingestion, model training, and performance validation.</li>
+                                <li>Supported the development of an Oil Palm Chatbot Assistant ("OPA") by structuring
+                                    and cleaning a document knowledge base extracted from PPKS research publications,
+                                    applying rule-based chunking, and authoring YAML metadata schemas.</li>
+                            </ul>
+                            <div class="exp-tags">
+                                <span>Machine Learning</span>
+                                <span>Computer Vision</span>
+                                <span>Object Detection</span>
+                                <span>Python & PyTorch</span>
+                                <span>NLP & Chatbot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline for Organization Experience -->
+                <div class="experience-timeline" id="timeline-org">
+                    <!-- Experience 2: BEM Fasilkom-TI -->
+                    <div class="exp-item">
+                        <div class="exp-year">
+                            <span class="exp-year-num">2024</span>
+                            <span class="exp-year-label">Sep - 2025</span>
+                        </div>
+                        <div class="exp-content">
+                            <h3 class="exp-title">Staff of Research & Technology Division</h3>
+                            <span class="exp-company">BEM Fasilkom-TI USU • Organization</span>
+                            <ul class="exp-bullets">
+                                <li>Helping students to improve their skills in the IT field.</li>
+                                <li>Collaborated with lecturers and faculty to organize PKM (Student Creativity Program)
+                                    programs.</li>
+                                <li>Researched and shared information on scholarships and IT competitions to support
+                                    student development.</li>
+                            </ul>
+                            <div class="exp-tags">
+                                <span>Research & Technology</span>
+                                <span>Student Development</span>
+                                <span>PKM Coordination</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3: HMTI USU -->
+                    <div class="exp-item">
+                        <div class="exp-year">
+                            <span class="exp-year-num">2024</span>
+                            <span class="exp-year-label">Aug</span>
+                        </div>
+                        <div class="exp-content">
+                            <h3 class="exp-title">Events Division Staff — PMB TI SeekIT</h3>
+                            <span class="exp-company">Himpunan Mahasiswa Teknologi Informasi USU • Organization</span>
+                            <ul class="exp-bullets">
+                                <li>Collaborated with lecturers and faculty members to organize and execute student
+                                    creativity programs (PKM).</li>
+                                <li>Researched and disseminated verified information regarding scholarships and national
+                                    IT competitions to support student development.</li>
+                                <li>Facilitated peer-sharing sessions and workshops aimed at improving students'
+                                    practical skills in the IT field.</li>
+                            </ul>
+                            <div class="exp-tags">
+                                <span>Event Committee</span>
+                                <span>Workshops</span>
+                                <span>IT Seminars</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 4: GDSC USU -->
+                    <div class="exp-item">
+                        <div class="exp-year">
+                            <span class="exp-year-num">2022</span>
+                            <span class="exp-year-label">2024</span>
+                        </div>
+                        <div class="exp-content">
+                            <h3 class="exp-title">Member of Machine Learning Path</h3>
+                            <span class="exp-company">Google Developer Student Clubs (GDSC) USU • Organization</span>
+                            <ul class="exp-bullets">
+                                <li>Developed technical knowledge in Google developer technologies within a peer-to-peer
+                                    learning environment.</li>
+                                <li>Completed the Machine Learning path by successfully designing and delivering a final
+                                    project assignment.</li>
+                            </ul>
+                            <div class="exp-tags">
+                                <span>Machine Learning</span>
+                                <span>Google Tech</span>
+                                <span>Peer-to-Peer Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SELECTED WORK -->
+        <section id="work" class="section work-section">
+            <div class="section-inner">
+                <!-- Work Cards Stacking Wrapper (GSAP will pin this) -->
+                <div class="work-cards-wrapper">
+                    <div class="section-header reveal-up">
+                        <span class="section-bullet">•</span>
+                        <span class="section-label">My Project</span>
+                    </div>
+
+                    <!-- Work Item 1 -->
+                    <div class="work-card" style="z-index: 1;">
+                        <div class="work-card-inner">
+                            <div class="work-image">
+                                <div class="work-img-placeholder grad-1">
+                                    <div class="mock-browser">
+                                        <div class="mock-dots"><span></span><span></span><span></span></div>
+                                        <div class="mock-image-content">
+                                            <img src="assets/p1.png" alt="Deteksi Mutu Green Bean Kopi">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="work-info" data-project="0">
+                                <div class="work-details">
+                                    <span class="work-category">Computer Vision</span>
+                                    <h3 class="work-title">Deteksi Mutu Green Bean Kopi </h3>
+                                </div>
+                                <div class="work-meta-right">
+                                    <span class="work-date-badge">Jun 2026</span>
+                                    <a href="#" class="arrow-circle" aria-label="View project">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7" />
+                                            <polyline points="7 7 17 7 17 17" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Work Item 2 -->
+                    <div class="work-card" style="z-index: 2;">
+                        <div class="work-card-inner">
+                            <div class="work-image">
+                                <div class="work-img-placeholder grad-2">
+                                    <div class="mock-browser dark-mock">
+                                        <div class="mock-dots"><span></span><span></span><span></span></div>
+                                        <div class="mock-content">
+                                            <div class="mock-hero-block">
+                                                <div class="mock-line w40"></div>
+                                                <div class="mock-line w70"></div>
+                                                <div class="mock-btn-row">
+                                                    <div class="mock-btn"></div>
+                                                    <div class="mock-btn ghost"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="work-info" data-project="1">
+                                <div class="work-details">
+                                    <span class="work-category">Machine Learning/Comvis</span>
+                                    <h3 class="work-title">Deteksi Organ Tumbuhan Sawit</h3>
+                                </div>
+                                <div class="work-meta-right">
+                                    <span class="work-date-badge">Mar 2025</span>
+                                    <a href="#" class="arrow-circle" aria-label="View project">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7" />
+                                            <polyline points="7 7 17 7 17 17" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Work Item 3 -->
+                    <div class="work-card" style="z-index: 3;">
+                        <div class="work-card-inner">
+                            <div class="work-image">
+                                <div class="work-img-placeholder grad-3">
+                                    <div class="mock-browser">
+                                        <div class="mock-dots"><span></span><span></span><span></span></div>
+                                        <div class="mock-content">
+                                            <div class="mock-cards-grid">
+                                                <div class="mock-card-sm"></div>
+                                                <div class="mock-card-sm"></div>
+                                                <div class="mock-card-sm"></div>
+                                                <div class="mock-card-sm"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="work-info" data-project="2">
+                                <div class="work-details">
+                                    <span class="work-category">Website Design</span>
+                                    <h3 class="work-title">UI/UX Agency Design</h3>
+                                </div>
+                                <div class="work-meta-right">
+                                    <span class="work-date-badge">Jan 2026</span>
+                                    <a href="#" class="arrow-circle" aria-label="View project">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7" />
+                                            <polyline points="7 7 17 7 17 17" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- end .work-cards-wrapper -->
+            </div>
+        </section>
+
+        <!-- MY SKILLS SECTION -->
+        <section id="skills" class="section skills-section">
+            <div class="section-inner">
+                <div class="section-header reveal-up">
+                    <span class="section-bullet">•</span>
+                    <span class="section-label">My Skills</span>
+                </div>
+                <div class="tech-stack-section" style="margin-top:0;">
+                    <div class="tech-marquee-container">
+                        <div class="tech-marquee-track">
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">🐍</span>
+                                </div>
+                                <h4 class="tech-card-name">Python</h4>
+                                <p class="tech-card-desc">Core language for AI/ML development and analysis</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">🗄️</span>
+                                </div>
+                                <h4 class="tech-card-name">SQL</h4>
+                                <p class="tech-card-desc">Relational database querying and management</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">🧠</span>
+                                </div>
+                                <h4 class="tech-card-name">Machine Learning Fundamentals</h4>
+                                <p class="tech-card-desc">Supervised and unsupervised models and algorithms</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">👁️</span>
+                                </div>
+                                <h4 class="tech-card-name">Computer Vision</h4>
+                                <p class="tech-card-desc">Object detection using YOLO and RT-DETR architectures</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">🏷️</span>
+                                </div>
+                                <h4 class="tech-card-name">Data Annotation</h4>
+                                <p class="tech-card-desc">Dataset labeling and quality control workflow</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">⚙️</span>
+                                </div>
+                                <h4 class="tech-card-name">Data Preprocessing</h4>
+                                <p class="tech-card-desc">Cleaning, structuring, and transforming raw data</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">🌐</span>
+                                </div>
+                                <h4 class="tech-card-name">HTML/CSS</h4>
+                                <p class="tech-card-desc">Web page structuring and responsive layout design</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">⚛️</span>
+                                </div>
+                                <h4 class="tech-card-name">React</h4>
+                                <p class="tech-card-desc">Component-based frontend interface development</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">📱</span>
+                                </div>
+                                <h4 class="tech-card-name">Flutter</h4>
+                                <p class="tech-card-desc">Cross-platform mobile application development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MY TOOLS SECTION -->
+        <section id="tools" class="section tools-section">
+            <div class="section-inner">
+                <div class="section-header reveal-up">
+                    <span class="section-bullet">•</span>
+                    <span class="section-label">My Tools</span>
+                </div>
+                <div class="tech-stack-section" style="margin-top:0;">
+                    <div class="tech-marquee-container">
+                        <div class="tech-marquee-track">
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">🐼</span>
+                                </div>
+                                <h4 class="tech-card-name">Pandas</h4>
+                                <p class="tech-card-desc">Data analysis and data manipulation tool for Python</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">🔢</span>
+                                </div>
+                                <h4 class="tech-card-name">NumPy</h4>
+                                <p class="tech-card-desc">Numerical computing and multi-dimensional array operations</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">🤖</span>
+                                </div>
+                                <h4 class="tech-card-name">Scikit-learn</h4>
+                                <p class="tech-card-desc">Classical machine learning algorithms and data analysis</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">🔥</span>
+                                </div>
+                                <h4 class="tech-card-name">PyTorch</h4>
+                                <p class="tech-card-desc">Deep learning framework for training neural networks</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">📊</span>
+                                </div>
+                                <h4 class="tech-card-name">TensorFlow</h4>
+                                <p class="tech-card-desc">End-to-end framework for machine learning models</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">🏷️</span>
+                                </div>
+                                <h4 class="tech-card-name">Roboflow</h4>
+                                <p class="tech-card-desc">Dataset management, annotation, and augmentation for CV</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">☁️</span>
+                                </div>
+                                <h4 class="tech-card-name">Google Colab</h4>
+                                <p class="tech-card-desc">Cloud environment for developing and running Jupyter notebooks
+                                </p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">🏆</span>
+                                </div>
+                                <h4 class="tech-card-name">Kaggle Notebooks</h4>
+                                <p class="tech-card-desc">Interactive notebook environment for data science projects</p>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon-wrapper">
+                                    <span class="tech-card-emoji">🟥</span>
+                                </div>
+                                <h4 class="tech-card-name">Laravel</h4>
+                                <p class="tech-card-desc">PHP web framework for building secure full-stack applications
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT / FOOTER SECTION -->
+        <section id="contact" class="section contact-section">
+            <div class="section-inner">
+                <!-- Profile Card -->
+                <div class="contact-profile reveal-up">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nrlaini04@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-icon-frame" aria-label="Send Email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32"
+                            height="32">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        </svg>
+                    </a>
+                    <h3 class="contact-name">Nurul Aini</h3>
+                </div>
+
+                <!-- Cursive Name + Marquee -->
+                <div class="contact-marquee-area reveal-up" data-delay="200">
+                    <h2 class="contact-cursive">Let's Talk</h2>
+                    <div class="marquee-container">
+                        <div class="marquee-track">
+                            <span>Book A Call &nbsp;•&nbsp; Book A Call &nbsp;•&nbsp; Book A Call &nbsp;•&nbsp; Book A
+                                Call &nbsp;•&nbsp; Book A Call &nbsp;•&nbsp; Book A Call &nbsp;•&nbsp; Book A Call
+                                &nbsp;•&nbsp; </span>
+                            <span>Book A Call &nbsp;•&nbsp; Book A Call &nbsp;•&nbsp; Book A Call &nbsp;•&nbsp; Book A
+                                Call &nbsp;•&nbsp; Book A Call &nbsp;•&nbsp; Book A Call &nbsp;•&nbsp; Book A Call
+                                &nbsp;•&nbsp; </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="contact-socials reveal-up" data-delay="300">
+                    <a href="#" class="social-circle" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-circle" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-circle" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="footer reveal-up" data-delay="400">
+                    <div class="footer-copy">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"
+                            height="16">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
+                        <span>Copyright by <strong>Nurul Aini</strong></span>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="app.js?v=61"></script>
+
+    <!-- 3D Liquid Wave Background Shader -->
+    <script>
+        (function () {
+            const canvas = document.getElementById('liquid-canvas');
+            const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+
+            if (!gl) {
+                console.warn('WebGL not supported, falling back to static background');
+                return;
+            }
+
+            // Vertex Shader: Fullscreen quad pass-through
+            const vsSource = `
+                attribute vec2 position;
+                varying vec2 vUv;
+                void main() {
+                    vUv = position * 0.5 + 0.5;
+                    gl_Position = vec4(position, 0.0, 1.0);
+                }
+            `;
+
+            // Fragment Shader: Organic fluid morphing noise (Simplex Noise + Wave Math)
+            const fsSource = `
+                precision highp float;
+                varying vec2 vUv;
+                uniform vec2 u_resolution;
+                uniform float u_time;
+
+                // Modulo 289 without divisions
+                vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
+                
+                // Simplex 2D noise implementation
+                float snoise(vec2 v) {
+                    const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+                             -0.577350269189626, 0.024390243902439);
+                    vec2 i  = floor(v + dot(v, C.yy));
+                    vec2 x0 = v -   i + dot(i, C.xx);
+                    vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+                    vec4 x12 = x0.xyxy + C.xxzz;
+                    x12.xy -= i1;
+                    i = mod(i, 289.0);
+                    vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0))
+                           + i.x + vec3(0.0, i1.x, 1.0));
+                    vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+                    m = m*m;
+                    m = m*m;
+                    vec3 x = 2.0 * fract(p * C.www) - 1.0;
+                    vec3 h = abs(x) - 0.5;
+                    vec3 a0 = x - floor(x + 0.5);
+                    vec3 g = sin(a0 * 6.283185); // Smooth wave oscillation
+                    vec3 a = m * g;
+                    return 130.0 * dot(a, vec3(1.0));
+                }
+
+                void main() {
+                    // Normalize screen coordinates
+                    vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+                    
+                    // Aspect ratio correction for responsive sizing
+                    float aspect = u_resolution.x / u_resolution.y;
+                    vec2 st = uv;
+                    st.x *= aspect;
+
+                    // Slow, smooth time morph multiplier
+                    float t = u_time * 0.15;
+                    
+                    // Stack multiple octaves of simplex noise for organic fluid look
+                    float n1 = snoise(st * 1.2 + vec2(t * 0.4, t * 0.2));
+                    float n2 = snoise(st * 1.8 - vec2(t * 0.3, -t * 0.4)) * 0.5;
+                    float n3 = snoise(st * 0.8 + vec2(-t * 0.2, t * 0.3)) * 0.7;
+                    
+                    float noise = (n1 + n2 + n3) * 0.6;
+                    
+                    // Curated palette of premium deep-blue and liquid cyan colors
+                    vec3 c_bg   = vec3(0.015, 0.03, 0.08); // Deep blue-black canvas
+                    vec3 c_blue = vec3(0.06, 0.18, 0.42);  // Rich royal blue wave
+                    vec3 c_cyan = vec3(0.03, 0.28, 0.50);  // Vibrant deep cyan highlight
+                    vec3 c_dark = vec3(0.04, 0.02, 0.12);  // Dark indigo/shadow
+
+                    // Liquid blending using noise mapping
+                    vec3 finalColor = c_bg;
+                    finalColor = mix(finalColor, c_blue, clamp(noise + uv.y * 0.8, 0.0, 1.0));
+                    finalColor = mix(finalColor, c_cyan, clamp(noise * 1.3 - uv.x * 0.4, 0.0, 1.0));
+                    finalColor = mix(finalColor, c_dark, clamp(sin(noise * 1.8) * 0.4 + 0.6, 0.0, 1.0));
+
+                    // Add dynamic brightness mapping for extra liquid flow feel
+                    finalColor += vec3(0.02, 0.05, 0.1) * clamp(noise, 0.0, 1.0);
+                    
+                    // Subtle vignette edge shading to focus center content
+                    float vignette = uv.x * (1.0 - uv.x) * uv.y * (1.0 - uv.y);
+                    vignette = clamp(pow(vignette * 16.0, 0.2), 0.0, 1.0);
+                    finalColor *= mix(0.65, 1.0, vignette);
+
+                    gl_FragColor = vec4(finalColor, 1.0);
+                }
+            `;
+
+            // Compile shader helper
+            function createShader(gl, type, source) {
+                const shader = gl.createShader(type);
+                gl.shaderSource(shader, source);
+                gl.compileShader(shader);
+                if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+                    console.error('Shader compiler error:', gl.getShaderInfoLog(shader));
+                    gl.deleteShader(shader);
+                    return null;
+                }
+                return shader;
+            }
+
+            const vertexShader = createShader(gl, gl.VERTEX_SHADER, vsSource);
+            const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fsSource);
+
+            const program = gl.createProgram();
+            gl.attachShader(program, vertexShader);
+            gl.attachShader(program, fragmentShader);
+            gl.linkProgram(program);
+
+            if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+                console.error('Shader linking error:', gl.getProgramInfoLog(program));
+                return;
+            }
+
+            // Create geometry: fullscreen quad (2 triangles)
+            const vertices = new Float32Array([
+                -1, -1, 1, -1, -1, 1,
+                -1, 1, 1, -1, 1, 1
+            ]);
+
+            const buffer = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+            gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+
+            const positionLocation = gl.getAttribLocation(program, 'position');
+            gl.enableVertexAttribArray(positionLocation);
+            gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+
+            const resolutionLocation = gl.getUniformLocation(program, 'u_resolution');
+            const timeLocation = gl.getUniformLocation(program, 'u_time');
+
+            // Responsive resizing handler
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            gl.useProgram(program);
+
+            // Animation Loop
+            function render(time) {
+                gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
+                gl.uniform1f(timeLocation, time * 0.001); // convert ms to seconds
+                gl.drawArrays(gl.TRIANGLES, 0, 6);
+                requestAnimationFrame(render);
+            }
+            requestAnimationFrame(render);
+        })();
+    </script>
+</body>
+
+</html>
