@@ -1670,16 +1670,30 @@ img {
   }
 
   .about-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 20px;
-    align-items: center;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+
+  .about-text {
+    flex: 1 !important;
+  }
+
+  .about-text p {
+    text-align: left !important;
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 12px !important;
   }
 
   .about-photo-card {
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
+    width: 105px !important;
+    height: 140px !important;
+    max-width: 105px !important;
+    flex-shrink: 0 !important;
+    margin: 4px 0 0 0 !important;
+    border-radius: var(--radius-md) !important;
   }
 
   .section {
