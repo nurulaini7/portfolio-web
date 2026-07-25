@@ -322,9 +322,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========================================================================
+
   // 12. PROJECT DETAIL MODAL
-  // ========================================================================
   const projectData = [
     {
       title: 'Sistem Deteksi Cacat Green Bean Kopi Untuk Penentuan Mutu',
@@ -337,8 +336,8 @@ document.addEventListener('DOMContentLoaded', () => {
       media: [
         { type: 'video', src: 'assets/demo.mp4', alt: 'Demo Video' },
       ],
-      link: 'https://github.com/nrlaini04/Deteksi-Green-Bean-Kopi',
-      linkLabel: 'View GitHub Code'
+      link: '#',
+      linkLabel: '#'
     },
     {
       title: 'Sistem Deteksi Organ Kelapa Sawit (RF-DETR)',
@@ -352,22 +351,22 @@ document.addEventListener('DOMContentLoaded', () => {
         { type: 'image', src: 'assets/ars.png', alt: 'arsitektur' },
         { type: 'image', src: 'assets/code.png', alt: 'codeTrain' },
       ],
-      link: 'https://colab.research.google.com/github/nurulaini7/portfolio-web/blob/main/Train_RF-DETR_With_WeightClass.ipynb',
-      linkLabel: 'Open Google Colab'
+      link: '#',
+      linkLabel: '#'
     },
     {
-      title: 'Sistem Deteksi Link Phishing Otomatis (Decision Tree)',
+      title: 'Sistem Deteksi Link Phishing',
       category: 'Machine Learning',
-      date: 'July 2025',
+      date: 'November 2024',
       description:
-        'Model machine learning berbasis Decision Tree untuk mendeteksi link/URL phishing secara otomatis. Dataset bersumber dari Kaggle yang dianalisis secara mendalam melalui EDA dan diseimbangkan dengan SMOTE untuk mengatasi ketidakseimbangan kelas. Model berhasil dideploy menggunakan API FastAPI untuk melakukan klasifikasi URL berbahaya secara real-time dengan tingkat akurasi (F1-Score) sebesar 86.80%.',
-      tags: ['Python', 'Machine Learning', 'Decision Tree', 'FastAPI', 'SMOTE', 'Cyber Security', 'EDA'],
+        'Merupakan mini project pada mata kuliah pembelajaran mesin, tim saya mengembangkan model machine learning berbasis Decision Tree untuk memprediksi link/URL phishing. Dataset bersumber dari Kaggle yang dianalisis melalui proses EDA dan diseimbangkan menggunakan teknik SMOTE untuk mengatasi ketidakseimbangan kelas. Model dideploy menggunakan API FastAPI untuk melakukan klasifikasi link/URL phishing dengan tingkat akurasi (F1-Score) sebesar 86.80%.',
+      tags: ['Python', 'Machine Learning', 'Decision Tree', 'FastAPI', 'SMOTE', 'EDA'],
       gradient: 'grad-3',
       media: [
-        { type: 'image', src: 'assets/p3.png', alt: 'Alur Sistem Deteksi Phishing' }
+        { type: 'image', src: 'assets/train.png', alt: 'Hasil deteksi' }
       ],
       link: '#',
-      linkLabel: 'Open API Doc'
+      linkLabel: ''
     },
   ];
 
