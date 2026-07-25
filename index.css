@@ -1670,12 +1670,16 @@ img {
   }
 
   .about-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    align-items: center;
   }
 
   .about-photo-card {
-    max-width: 220px;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
   }
 
   .section {
@@ -2242,5 +2246,50 @@ img {
   .tools-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+  }
+}
+
+/* Custom Overrides for Flexible Project Image Mockups */
+.work-img-placeholder {
+  height: auto !important;
+  min-height: unset !important;
+  padding: 24px !important;
+}
+
+.work-img {
+  height: auto !important;
+}
+
+.mock-image-content {
+  height: auto !important;
+  min-height: unset !important;
+  max-height: unset !important;
+}
+
+.mock-image-content img {
+  height: auto !important;
+  object-fit: contain !important;
+  display: block;
+  width: 100%;
+}
+
+/* Overrides inside media queries to make it responsive */
+@media (max-width: 768px) {
+  .work-img-placeholder {
+    height: auto !important;
+    padding: 16px !important;
+  }
+  .work-img {
+    height: auto !important;
+  }
+  .mock-image-content {
+    height: auto !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .work-img-placeholder {
+    height: auto !important;
+    padding: 12px !important;
   }
 }

@@ -336,8 +336,8 @@ document.addEventListener('DOMContentLoaded', () => {
       media: [
         { type: 'video', src: 'assets/demo.mp4', alt: 'Demo Video' },
       ],
-      link: '#',
-      linkLabel: '#'
+      link: 'https://repositori.usu.ac.id/handle/123456789/115276',
+      linkLabel: 'Visit Repository'
     },
     {
       title: 'Sistem Deteksi Organ Kelapa Sawit (RF-DETR)',
@@ -351,8 +351,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { type: 'image', src: 'assets/ars.png', alt: 'arsitektur' },
         { type: 'image', src: 'assets/code.png', alt: 'codeTrain' },
       ],
-      link: '#',
-      linkLabel: '#'
+      link: 'https://colab.research.google.com/github/nurulaini7/portfolio-web/blob/main/Train_RF-DETR_With_WeightClass.ipynb',
+      linkLabel: 'Open Google Colab'
     },
     {
       title: 'Sistem Deteksi Link Phishing',
