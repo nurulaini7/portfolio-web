@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'Computer Vision',
       date: 'June 2026',
       description:
-        'Ini merupakan project skripsi / tugas akhir saya, Project ini menggunakan model YOLOv11 berbasis Instance Segmentation untuk mendeteksi cacat pada Green Bean kopi dalam menentukan nilai mutu nya berdasarkan SNI, disini saya menggunakan backend sebagai tempat code post-processing dan best.pt model nya, serta menggunakan flutter mobile Android sebagai front-end dalam implementasi hasil nya, serta tunneling yang digunakan yaitu Ngrok untuk komunikasi antara mobile dan backend local',
+        'Ini merupakan project skripsi / tugas akhir saya, Project ini menggunakan model YOLOv11 berbasis Instance Segmentation untuk mendeteksi cacat pada Green Bean kopi dalam menentukan nilai mutu berdasarkan SNI, disini saya menggunakan backend sebagai API, post-processing dan best.pt model nya, serta menggunakan flutter mobile Android sebagai front-end dalam implementasi hasil, dan tunneling yang digunakan yaitu Ngrok untuk komunikasi antara mobile dan backend local',
       tags: ['Python', 'Computer Vision', 'Deep Learning', "Roboflow", "YOLOv11", "Instance Segmentation"],
       gradient: 'grad-1',
       media: [
@@ -356,18 +356,18 @@ document.addEventListener('DOMContentLoaded', () => {
       linkLabel: 'Open Google Colab'
     },
     {
-      title: 'UI/UX Agency Design',
-      category: 'Website Design',
-      date: 'January 2026',
+      title: 'Sistem Deteksi Link Phishing Otomatis (Decision Tree)',
+      category: 'Machine Learning',
+      date: 'July 2025',
       description:
-        'A full-spectrum design agency website showcasing portfolio work, services, and team culture. Built with a focus on storytelling through design and interactive elements.',
-      tags: ['UX Strategy', 'Visual Design', 'Interaction Design', 'Next.js', 'Framer'],
+        'Model machine learning berbasis Decision Tree untuk mendeteksi link/URL phishing secara otomatis. Dataset bersumber dari Kaggle yang dianalisis secara mendalam melalui EDA dan diseimbangkan dengan SMOTE untuk mengatasi ketidakseimbangan kelas. Model berhasil dideploy menggunakan API FastAPI untuk melakukan klasifikasi URL berbahaya secara real-time dengan tingkat akurasi (F1-Score) sebesar 86.80%.',
+      tags: ['Python', 'Machine Learning', 'Decision Tree', 'FastAPI', 'SMOTE', 'Cyber Security', 'EDA'],
       gradient: 'grad-3',
       media: [
-        { type: 'image', src: 'assets/p1.png', alt: 'Agency preview 1' },
-        { type: 'image', src: 'assets/p1.png', alt: 'Agency preview 2' },
+        { type: 'image', src: 'assets/p3.png', alt: 'Alur Sistem Deteksi Phishing' }
       ],
-      link: '#' // Gunakan '#' jika belum ada link
+      link: '#',
+      linkLabel: 'Open API Doc'
     },
   ];
 
