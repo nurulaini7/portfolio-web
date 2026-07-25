@@ -210,13 +210,15 @@ img {
 }
 
 .loc-city {
-  color: var(--text);
-  font-weight: 500;
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-size: 11px;
 }
 
 .loc-country {
-  color: var(--text-muted);
-  font-size: 12px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .section {
@@ -443,21 +445,23 @@ img {
 .about-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  gap: 40px;
+  gap: 20px 40px;
   align-items: center;
   margin-bottom: 0;
 }
 
-.about-text h2 {
-  font-size: clamp(28px, 3.5vw, 42px);
-  font-weight: 600;
-  line-height: 1.3;
-  margin-bottom: 20px;
-  color: var(--text);
-  text-align: left;
+.about-text-p1 {
+  grid-column: 1;
+  grid-row: 1;
 }
 
-.about-text p {
+.about-text-p2 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.about-text-p1 p,
+.about-text-p2 p {
   font-size: clamp(15px, 1.3vw, 17px);
   color: #ffffff;
   line-height: 1.8;
@@ -465,6 +469,8 @@ img {
 }
 
 .about-photo-card {
+  grid-column: 2;
+  grid-row: 1 / 3;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid rgba(59, 130, 246, 0.1);
@@ -1670,30 +1676,46 @@ img {
   }
 
   .about-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: flex-start !important;
-    gap: 14px !important;
+    display: grid !important;
+    grid-template-columns: 1.2fr 1fr !important;
+    gap: 16px !important;
+    align-items: center !important;
   }
 
-  .about-text {
-    flex: 1 !important;
+  .about-text-p1 {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
   }
 
-  .about-text p {
-    text-align: left !important;
+  .about-text-p1 p {
+    text-align: justify !important;
     font-size: 13.5px !important;
     line-height: 1.6 !important;
-    margin-bottom: 12px !important;
+    margin: 0 !important;
   }
 
   .about-photo-card {
-    width: 105px !important;
-    height: 140px !important;
-    max-width: 105px !important;
-    flex-shrink: 0 !important;
-    margin: 4px 0 0 0 !important;
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3/4 !important;
+    max-width: 125px !important;
+    margin: 0 auto !important;
     border-radius: var(--radius-md) !important;
+  }
+
+  .about-text-p2 {
+    grid-column: 1 / 3 !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+  }
+
+  .about-text-p2 p {
+    text-align: justify !important;
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
+    margin: 8px 0 0 0 !important;
   }
 
   .section {
