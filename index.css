@@ -2249,47 +2249,35 @@ img {
   }
 }
 
-/* Custom Overrides for Flexible Project Image Mockups */
-.work-img-placeholder {
+/* Custom Overrides for Flexible Modal Preview Content */
+.modal-preview {
   height: auto !important;
   min-height: unset !important;
-  padding: 24px !important;
 }
 
-.work-img {
-  height: auto !important;
-}
-
-.mock-image-content {
+.modal-preview-placeholder {
   height: auto !important;
   min-height: unset !important;
-  max-height: unset !important;
+  padding: 0 !important;
+  background: transparent !important;
 }
 
-.mock-image-content img {
+.modal-preview-placeholder img {
   height: auto !important;
+  width: 100% !important;
   object-fit: contain !important;
-  display: block;
-  width: 100%;
+  border-radius: var(--radius-xl) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-/* Overrides inside media queries to make it responsive */
+/* Overrides inside media queries for modal previews */
 @media (max-width: 768px) {
-  .work-img-placeholder {
-    height: auto !important;
-    padding: 16px !important;
-  }
-  .work-img {
+  .modal-preview {
+    min-height: unset !important;
     height: auto !important;
   }
-  .mock-image-content {
+  .modal-preview-placeholder {
+    min-height: unset !important;
     height: auto !important;
-  }
-}
-
-@media (max-width: 640px) {
-  .work-img-placeholder {
-    height: auto !important;
-    padding: 12px !important;
   }
 }
