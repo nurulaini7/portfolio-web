@@ -663,7 +663,7 @@ document.addEventListener('DOMContentLoaded', () => {
           } else {
             container.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
           }
-        }, 4000);
+        }, 2500); // Dipercepat dari 4000ms ke 2500ms
       }
 
       function stopAutoPlay() {
@@ -738,4 +738,20 @@ document.addEventListener('DOMContentLoaded', () => {
   initGsapCards();
   initExperienceTabs();
   initSkillsCarousel();
+
+  // Multi-stage trigger refresh untuk mencegah card macet/ngelag di HP
+  const refreshTimes = [300, 1000, 2500];
+  refreshTimes.forEach((delay) => {
+    setTimeout(() => {
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
+    }, delay);
+  });
+
+  window.addEventListener('load', () => {
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.refresh();
+    }
+  });
 });
