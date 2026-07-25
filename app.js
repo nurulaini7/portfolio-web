@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'Computer Vision',
       date: 'June 2026',
       description:
-        'This is my finale project for undergraduate thesis, utilizing computer vision and deep learning to detect defects in green coffee beans and determine their quality. Using YOLOv11 instance segmentation method. Using API for the best model and flutter for mobile application.',
+        'Ini merupakan project skripsi / tugas akhir saya, Project ini menggunakan model YOLOv11 berbasis Instance Segmentation untuk mendeteksi cacat pada Green Bean kopi dalam menentukan nilai mutu nya berdasarkan SNI, disini saya menggunakan backend sebagai tempat code post-processing dan best.pt model nya, serta menggunakan flutter mobile Android sebagai front-end dalam implementasi hasil nya, serta tunneling yang digunakan yaitu Ngrok untuk komunikasi antara mobile dan backend local',
       tags: ['Python', 'Computer Vision', 'Deep Learning', "Roboflow", "YOLOv11", "Instance Segmentation"],
       gradient: 'grad-1',
       media: [
