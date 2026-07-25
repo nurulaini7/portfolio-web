@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="index.css?v=70">
+    <link rel="stylesheet" href="index.css?v=71">
 </head>
 
 <body>
@@ -701,7 +701,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="app.js?v=70"></script>
+    <script src="app.js?v=71"></script>
 
     <!-- 3D Liquid Wave Background Shader -->
     <script>
@@ -726,7 +726,11 @@
 
             // Fragment Shader: Organic fluid morphing noise (Simplex Noise + Wave Math)
             const fsSource = `
+                #ifdef GL_FRAGMENT_PRECISION_HIGH
                 precision highp float;
+                #else
+                precision mediump float;
+                #endif
                 varying vec2 vUv;
                 uniform vec2 u_resolution;
                 uniform float u_time;
