@@ -721,6 +721,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================================================
+  // 16. READ MORE TOGGLE (Mobile only)
+  // ========================================================================
+  function initReadMore() {
+    const btn = $('#readMoreBtn');
+    const expandedText = $('#aboutExpandedText');
+    if (!btn || !expandedText) return;
+
+    btn.addEventListener('click', () => {
+      const isExpanded = expandedText.style.display === 'block';
+      if (isExpanded) {
+        expandedText.style.display = 'none';
+        btn.querySelector('span').textContent = 'Read More';
+        btn.classList.remove('expanded');
+      } else {
+        expandedText.style.display = 'block';
+        btn.querySelector('span').textContent = 'Read Less';
+        btn.classList.add('expanded');
+      }
+      
+      // Refresh ScrollTrigger since layout size changed!
+      setTimeout(() => {
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
+        }
+      }, 50);
+    });
+  }
+
+  // ========================================================================
   // INITIALIZE ALL MODULES
   // ========================================================================
   initScrollReveal();
@@ -737,6 +766,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGsapCards();
   initExperienceTabs();
   initSkillsCarousel();
+  initReadMore();
 
   // Multi-stage trigger refresh untuk mencegah card macet/ngelag di HP
   const refreshTimes = [300, 1000, 2500];

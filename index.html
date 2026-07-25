@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="index.css?v=77">
+    <link rel="stylesheet" href="index.css?v=78">
 </head>
 
 <body>
@@ -214,7 +214,11 @@
                     <div class="about-photo-card reveal-up" data-delay="200">
                         <img src="assets/profil.jpeg" alt="Nurul Aini" class="about-photo">
                     </div>
-                    <div class="about-text-p2 reveal-up" data-delay="300">
+                    <button type="button" class="read-more-btn" id="readMoreBtn">
+                        <span>Read More</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="about-text-p2 reveal-up" data-delay="300" id="aboutExpandedText">
                         <p>During my college years, I was actively involved in student organizations, being a staff in
                             Research & Technology division in BEM Fasilkom-TI, a member of the events committee for
                             welcoming a new students, and participating as a member of GDSC / Google Developer Group on
@@ -697,7 +701,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="app.js?v=77"></script>
+    <script src="app.js?v=78"></script>
 
     <!-- 3D Liquid Wave Background Shader -->
     <script>
