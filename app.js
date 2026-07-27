@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tags: ['Python', 'Computer Vision', 'Deep Learning', "Roboflow", "YOLOv11", "Instance Segmentation"],
       gradient: 'grad-1',
       media: [
-        { type: 'video', src: 'https://res.cloudinary.com/poqmro5v/video/upload/v1785113627/demo_f1dhpt.mp4', alt: 'Demo Video' },
+        { type: 'video', src: 'https://res.cloudinary.com/poqmro5v/video/upload/v1785115624/N.Aini_qc8efk.mp4', alt: 'Demo Video' },
       ],
       link: 'https://repositori.usu.ac.id/handle/123456789/115276',
       linkLabel: 'Visit Repository'
