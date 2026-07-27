@@ -2353,3 +2353,14 @@ img {
     height: auto !important;
   }
 }
+
+/* Hide download button in HTML5 video controls for Chrome/Safari/Edge */
+video::-internal-media-controls-download-button {
+  display: none !important;
+}
+video::-webkit-media-controls-enclosure {
+  overflow: hidden !important;
+}
+video::-webkit-media-controls-panel {
+  width: calc(100% + 30px) !important; /* geser keluar area untuk menyembunyikan tombol download */
+}

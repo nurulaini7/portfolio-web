@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Disable right-click context menu
             video.addEventListener('contextmenu', (e) => e.preventDefault());
             // Disable download button and other controls
-            video.setAttribute('controlsList', 'nodownload');
+            video.setAttribute('controlslist', 'nodownload');
             video.setAttribute('disablePictureInPicture', 'true');
             video.style.width = '100%';
             video.style.height = '100%';
