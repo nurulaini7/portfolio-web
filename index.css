@@ -1715,9 +1715,9 @@ img {
   }
 
   .about-text-p1 p {
-    text-align: left !important; /* Rata kiri untuk paragraf 1 agar kata-kata tidak renggang */
+    text-align: left !important; /* Biar kata-kata gak pecah/renggang di layar HP */
     font-size: 13.5px !important;
-    line-height: 1.75 !important; /* Solusi 3: Naikkan line-height */
+    line-height: 1.75 !important; /* Line height dibuat agak longgar */
     margin: 0 !important;
   }
 
@@ -1727,7 +1727,7 @@ img {
     width: 100% !important;
     height: auto !important;
     aspect-ratio: 3/4 !important;
-    max-width: 135px !important; /* Foto diperbesar lagi */
+    max-width: 135px !important; /* Ukuran foto profil HP */
     margin: 0 auto !important;
     border-radius: var(--radius-md) !important;
   }
@@ -1744,13 +1744,13 @@ img {
     grid-column: 1 / 3 !important;
     grid-row: 3 !important;
     width: 100% !important;
-    display: none; /* Solusi 2: Sembunyikan default di HP */
+    display: none; /* Sembunyikan paragraf 2 di awal */
   }
 
   .about-text-p2 p {
-    text-align: justify !important; /* Paragraf 2 rata kanan kiri */
+    text-align: justify !important; /* Buat justify biar rapi pas kebuka */
     font-size: 13.5px !important;
-    line-height: 1.75 !important; /* Solusi 3: Jarak baris lebih longgar */
+    line-height: 1.75 !important; /* Samakan line height */
     margin: 8px 0 0 0 !important;
   }
 

@@ -1,21 +1,15 @@
-/**
- * Portfolio JavaScript — Clean Code Architecture
- * Modules: Animations, Navigation, Interactions, Modal, GSAP
- */
+// Script JS Utama buat Portofolio Nurul Aini
+// Ngatur animasi GSAP, modal detail project, custom cursor, sama background 3D.
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  // ========================================================================
-  // 1. UTILITY HELPERS
-  // ========================================================================
+  // Helper sederhana buat query selector biar gak kepanjangan nulis document.querySelector
   const $ = (selector, ctx = document) => ctx.querySelector(selector);
   const $$ = (selector, ctx = document) => [...ctx.querySelectorAll(selector)];
   const isMobile = () => window.innerWidth < 768;
   const ease = 'cubic-bezier(0.16, 1, 0.3, 1)';
 
-  // ========================================================================
-  // 2. SCROLL REVEAL (Intersection Observer)
-  // ========================================================================
+  // Animasi reveal element pas di-scroll ke bawah (pake Intersection Observer)
   function initScrollReveal() {
     const elements = $$('.reveal-up');
     if (!elements.length) return;
@@ -36,9 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.forEach((el) => observer.observe(el));
   }
 
-  // ========================================================================
-  // 3. SPLIT TEXT REVEAL (Character-by-character scroll reveal)
-  // ========================================================================
+  // Efek teks menyala per-karakter pas discroll (split text reveal)
   function initSplitTextReveal() {
     const elements = $$('.split-text-reveal');
     if (!elements.length) return;
@@ -97,9 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     update();
   }
 
-  // ========================================================================
-  // 4. COUNT-UP ANIMATION
-  // ========================================================================
+  // Animasi hitung angka statistik (stat counter)
   function initCountUp() {
     const elements = $$('.stat-value[data-count]');
     if (!elements.length) return;
@@ -140,9 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(tick);
   }
 
-  // ========================================================================
-  // 5. SIDEBAR NAVIGATION ACTIVE STATE
-  // ========================================================================
+  // Update dot aktif di navigasi sidebar pas scroll halaman
   function initSidebarNav() {
     const sections = $$('section[id]');
     const dots = $$('.sidebar-nav .nav-dot');
@@ -164,9 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach((section) => observer.observe(section));
   }
 
-  // ========================================================================
-  // 6. SERVICES ACCORDION
-  // ========================================================================
+  // Accordion buat list service (cadangan, saat ini section service didelete)
   function initAccordion() {
     const headers = $$('.service-header');
     headers.forEach((header) => {
@@ -189,9 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========================================================================
-  // 7. SMOOTH SCROLL FOR ANCHOR LINKS
-  // ========================================================================
+  // Smooth scroll buat link jangkar (#about, #experience, dll)
   function initSmoothScroll() {
     $$('a[href^="#"]').forEach((link) => {
       link.addEventListener('click', (e) => {
@@ -204,9 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========================================================================
-  // 8. PARALLAX & HEADER SCROLL EFFECTS
-  // ========================================================================
+  // Efek parallax halus pada foto hero dan penyesuaian navbar saat scroll
   function initScrollEffects() {
     let ticking = false;
 
@@ -236,9 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     onScroll();
   }
 
-  // ========================================================================
-  // 9. MAGNETIC HOVER EFFECT
-  // ========================================================================
+  // Efek tarikan magnet pada tombol dan sosmed icon pas di-hover kursor
   function initMagneticHover() {
     $$('.btn-primary, .arrow-circle, .social-circle').forEach((el) => {
       el.addEventListener('mousemove', (e) => {
@@ -259,9 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========================================================================
-  // 10. WORK CARD TILT EFFECT
-  // ========================================================================
+  // Efek card agak miring 3D (tilt) mengikuti posisi mouse/hover
   function initCardTilt() {
     $$('.work-card-inner').forEach((inner) => {
       inner.addEventListener('mousemove', (e) => {
@@ -282,9 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========================================================================
-  // 11. CUSTOM CURSOR
-  // ========================================================================
+  // Custom cursor lingkaran yang ngikutin gerakan mouse dengan inertia
   function initCustomCursor() {
     const cursor = document.createElement('div');
     cursor.className = 'custom-cursor';
@@ -536,9 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========================================================================
-  // 13. GSAP SCROLLTRIGGER (Work Cards Stacking)
-  // ========================================================================
+  // Animasi tumpukan kartu proyek (GSAP ScrollTrigger Stacking Cards)
   function initGsapCards() {
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
@@ -601,9 +575,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
-  // ========================================================================
-  // 14. EXPERIENCE TABS SWITCHER
-  // ========================================================================
+  // Switcher tab untuk bagian timeline pengalaman kerja/pendidikan
   function initExperienceTabs() {
     const btns = $$('.exp-tab-btn');
     const timelines = $$('.experience-timeline');
@@ -632,9 +604,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========================================================================
-  // 15. SKILLS CAROUSEL WITH SCROLL-SNAP & DESKTOP DRAG
-  // ========================================================================
+  // Carousel keahlian & tools (bisa digeser pake mouse di desktop/swipe di mobile)
   function initSkillsCarousel() {
     const containers = $$('.tech-marquee-container');
     
@@ -720,9 +690,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========================================================================
-  // 16. READ MORE TOGGLE (Mobile only)
-  // ========================================================================
+  // Fitur Read More / Baca Selengkapnya buat deskripsi bio di HP agar ringkas
   function initReadMore() {
     const btn = $('#readMoreBtn');
     const expandedText = $('#aboutExpandedText');
@@ -749,9 +717,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========================================================================
-  // INITIALIZE ALL MODULES
-  // ========================================================================
+  // JALANKAN SEMUA INISIALISASI MODUL PAS HALAMAN SIAP
   initScrollReveal();
   initSplitTextReveal();
   initCountUp();
