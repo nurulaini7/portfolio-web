@@ -324,7 +324,6 @@ document.addEventListener('DOMContentLoaded', () => {
       tags: ['Python', 'PyTorch', 'Google Colab', 'RF-DETR', 'Object Detection', 'Roboflow'],
       gradient: 'grad-2',
       media: [
-        { type: 'image', src: 'assets/gc.png', alt: 'Google Colab Notebook' },
         { type: 'image', src: 'assets/ars.png', alt: 'arsitektur' },
         { type: 'image', src: 'assets/code.png', alt: 'codeTrain' },
       ],
