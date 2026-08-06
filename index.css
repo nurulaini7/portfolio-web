@@ -2338,6 +2338,7 @@ img {
 .modal-preview {
   height: auto !important;
   min-height: unset !important;
+  align-self: start !important;
 }
 
 .modal-preview-placeholder {
