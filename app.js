@@ -344,6 +344,20 @@ document.addEventListener('DOMContentLoaded', () => {
       link: '#',
       linkLabel: ''
     },
+    {
+      title: 'Lab Management System ITLG',
+      category: 'Web Application / Project Management',
+      date: 'December 2024',
+      description:
+        'Sistem manajemen laboratorium ITLG dikembangkan untuk merubah pengelolaan laboratorium manual menjadi digital. Saya berperan sebagai Project Manager (PM) yang memimpin tim pengembang, merencanakan timeline & alokasi sumber daya dengan Gantt Chart, melakukan analisis stakeholder, memetakan kebutuhan pengguna (User Needs), serta merumuskan kebutuhan fungsional & non-fungsional sistem. Sistem ini dikembangkan menggunakan ReactJS dan Laravel 11 dengan fitur utama seperti reservasi kelas digital bebas bentrok, scan QR code untuk absensi masuk ruangan secara real time, logbook asisten digital dengan fitur ekspor Excel, kalender asisten terintegrasi, dan dasbor koordinator untuk monitoring aktivitas.',
+      tags: ['ReactJS', 'Laravel 11', 'MySQL', 'Project Management', 'Gantt Chart', 'System Analysis', 'Use Case Analysis'],
+      gradient: 'grad-4',
+      media: [
+        { type: 'image', src: 'assets/p4.png', alt: 'Dashboard Lab Management System' }
+      ],
+      link: 'https://github.com/welmnlg/lab_management_system',
+      linkLabel: 'Visit Repository'
+    }
   ];
 
   function initProjectModal() {
