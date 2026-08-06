@@ -1222,6 +1222,12 @@ img {
   transition: var(--transition);
 }
 
+.tech-icon-wrapper img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
 .tech-card:hover .tech-icon-wrapper {
   background: var(--accent-dim);
   border-color: rgba(59, 130, 246, 0.25);
