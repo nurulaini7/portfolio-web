@@ -324,6 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tags: ['Python', 'PyTorch', 'Google Colab', 'RF-DETR', 'Object Detection', 'Roboflow'],
       gradient: 'grad-2',
       media: [
+        { type: 'image', src: 'assets/gc.png', alt: 'Google Colab Notebook' },
         { type: 'image', src: 'assets/ars.png', alt: 'arsitektur' },
         { type: 'image', src: 'assets/code.png', alt: 'codeTrain' },
       ],
@@ -353,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tags: ['ReactJS', 'Laravel 11', 'MySQL', 'Project Management', 'Gantt Chart', 'System Analysis', 'Use Case Analysis'],
       gradient: 'grad-4',
       media: [
-        { type: 'image', src: 'assets/p4.png', alt: 'Dashboard Lab Management System' }
+        { type: 'image', src: 'assets/web.png', alt: 'Dashboard Lab Management System' }
       ],
       link: 'https://github.com/welmnlg/lab_management_system',
       linkLabel: 'Visit Repository'
