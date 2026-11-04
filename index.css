@@ -1802,10 +1802,11 @@ img {
 
   .work-cards-wrapper {
     position: relative;
-    height: auto;
-    min-height: 0;
-    padding-top: 86px;
-    overflow: visible;
+    height: 100vh;
+    height: 100svh;
+    min-height: 560px;
+    padding-top: 0;
+    overflow: hidden;
   }
 
   .work-section .section-header {
@@ -1814,20 +1815,12 @@ img {
   }
 
   .work-cards-track {
-    align-items: stretch;
+    align-items: center;
     gap: 18px;
-    width: 100%;
-    height: auto;
-    padding: 12px 24px 36px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .work-cards-track::-webkit-scrollbar {
-    display: none;
+    width: max-content;
+    height: 100%;
+    padding: 70px calc((100vw - min(84vw, 560px) - 32px) / 2) 0;
+    overflow: visible;
   }
 
   .work-card {
@@ -1836,7 +1829,6 @@ img {
     flex-basis: min(84vw, 560px);
     width: min(84vw, 560px) !important;
     max-width: none !important;
-    scroll-snap-align: center;
   }
 
   .work-card-inner {
@@ -1870,12 +1862,12 @@ img {
 
 @media (max-width: 640px) {
   .work-cards-wrapper {
-    padding-top: 74px;
+    min-height: 560px;
   }
 
   .work-cards-track {
     gap: 14px;
-    padding: 12px 14px 30px;
+    padding: 70px calc((100vw - (100vw - 52px) - 32px) / 2) 0;
   }
 
   .work-card {

@@ -531,7 +531,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Geser kartu proyek secara horizontal mengikuti scroll halaman.
   function initGsapCards() {
     if (
-      isMobile() ||
       window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
       typeof gsap === 'undefined' ||
       typeof ScrollTrigger === 'undefined'
