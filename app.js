@@ -528,67 +528,63 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Animasi tumpukan kartu proyek (GSAP ScrollTrigger Stacking Cards)
+  // Geser kartu proyek secara horizontal mengikuti scroll halaman.
   function initGsapCards() {
-    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+    if (
+      isMobile() ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      typeof gsap === 'undefined' ||
+      typeof ScrollTrigger === 'undefined'
+    ) return;
 
     gsap.registerPlugin(ScrollTrigger);
 
     const wrapper = $('.work-cards-wrapper');
-    const cards = gsap.utils.toArray('.work-card');
-    if (!wrapper || cards.length === 0) return;
+    const track = $('.work-cards-track', wrapper);
+    const cards = track ? $$('.work-card', track) : [];
+    if (!wrapper || !track || cards.length < 2) return;
 
-    // Set initial positions
-    cards.forEach((card, i) => {
-      gsap.set(card, {
-        xPercent: -50,
-        yPercent: i === 0 ? -50 : 200,
-      });
-      const info = card.querySelector('.work-info');
-      if (info) gsap.set(info, { opacity: i === 0 ? 1 : 0 });
-    });
+    const getDistance = () => Math.max(0, track.scrollWidth - wrapper.clientWidth);
+    const cardGap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    const cardStep = cards[0].getBoundingClientRect().width + cardGap;
 
-    // Higher scrollPerCard values make card scrolling slower and more controllable.
-    // Higher scrub value creates smooth luxury inertia.
-    const scrollPerCard = isMobile() ? 480 : 360;
-    const totalScroll = (cards.length - 1) * scrollPerCard;
-    const scrubValue = isMobile() ? 1.6 : 1.5;
+    wrapper.classList.add('is-horizontal-pinned');
+    gsap.set(track, { x: 0 });
+    gsap.set(cards, { opacity: 0.7, scale: 0.94, y: 18 });
+    gsap.set(cards[0], { opacity: 1, scale: 1, y: 0 });
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: wrapper,
         start: 'top top',
-        end: `+=${totalScroll}vh`,
+        end: () => `+=${getDistance()}`,
         pin: wrapper,
         pinSpacing: true,
-        scrub: scrubValue,
+        scrub: 1.2,
         invalidateOnRefresh: true,
         anticipatePin: 1,
       },
     });
 
-    cards.forEach((card, i) => {
-      if (i >= cards.length - 1) return;
-
-      const currentInner = card.querySelector('.work-card-inner');
-      const currentInfo = card.querySelector('.work-info');
-      const nextCard = cards[i + 1];
-      const nextInfo = nextCard.querySelector('.work-info');
-      const seg = i;
-
-      if (currentInfo) {
-        tl.to(currentInfo, { opacity: 0, duration: 0.4, ease: 'power2.out' }, seg);
-      }
-
-      tl.to(currentInner, { scale: 0.86, opacity: 0.25, duration: 1.0, ease: 'power2.inOut' }, seg);
-
-      tl.to(nextCard, { yPercent: -50, duration: 1.0, ease: 'power2.inOut' }, seg);
-
-      if (nextInfo) {
-        tl.to(nextInfo, { opacity: 1, duration: 0.5, ease: 'power2.out' }, seg + 0.5);
-      }
+    tl.to(track, { x: () => -getDistance(), ease: 'none', duration: 1 }, 0);
+    cards.forEach((card, index) => {
+      if (index === 0) return;
+      const position = Math.min((index * cardStep) / getDistance(), 0.9);
+      tl.to(cards[index - 1], {
+        opacity: 0.7,
+        scale: 0.94,
+        y: -12,
+        duration: 0.22,
+        ease: 'power2.out',
+      }, position);
+      tl.to(card, {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 0.3,
+        ease: 'power2.out',
+      }, position);
     });
-
   }
 
   // Switcher tab untuk bagian timeline pengalaman kerja/pendidikan
