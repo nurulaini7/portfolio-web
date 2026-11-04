@@ -550,8 +550,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     wrapper.classList.add('is-horizontal-pinned');
     gsap.set(track, { x: 0 });
-    gsap.set(cards, { opacity: 0.7, scale: 0.94, y: 18 });
-    gsap.set(cards[0], { opacity: 1, scale: 1, y: 0 });
+    gsap.set(cards, { scale: 0.97 });
+    gsap.set(cards[0], { scale: 1 });
+    gsap.set(cards.map((card) => card.querySelector('.work-card-inner')), {
+      boxShadow: '0 20px 55px rgba(0, 0, 0, 0.25)',
+      borderColor: 'rgba(148, 163, 184, 0.1)',
+    });
+    gsap.set(cards[0].querySelector('.work-card-inner'), {
+      boxShadow: '0 28px 75px rgba(6, 182, 212, 0.2)',
+      borderColor: 'rgba(6, 182, 212, 0.42)',
+    });
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -569,19 +577,29 @@ document.addEventListener('DOMContentLoaded', () => {
     tl.to(track, { x: () => -getDistance(), ease: 'none', duration: 1 }, 0);
     cards.forEach((card, index) => {
       if (index === 0) return;
-      const position = Math.min((index * cardStep) / getDistance(), 0.9);
+      const position = Math.max(0, (index * cardStep) / getDistance() - 0.24);
+      const previousInner = cards[index - 1].querySelector('.work-card-inner');
+      const currentInner = card.querySelector('.work-card-inner');
       tl.to(cards[index - 1], {
-        opacity: 0.7,
-        scale: 0.94,
-        y: -12,
-        duration: 0.22,
+        scale: 0.97,
+        duration: 0.18,
+        ease: 'power2.out',
+      }, position);
+      tl.to(previousInner, {
+        boxShadow: '0 20px 55px rgba(0, 0, 0, 0.25)',
+        borderColor: 'rgba(148, 163, 184, 0.1)',
+        duration: 0.18,
         ease: 'power2.out',
       }, position);
       tl.to(card, {
-        opacity: 1,
         scale: 1,
-        y: 0,
-        duration: 0.3,
+        duration: 0.24,
+        ease: 'power2.out',
+      }, position);
+      tl.to(currentInner, {
+        boxShadow: '0 28px 75px rgba(6, 182, 212, 0.2)',
+        borderColor: 'rgba(6, 182, 212, 0.42)',
+        duration: 0.24,
         ease: 'power2.out',
       }, position);
     });

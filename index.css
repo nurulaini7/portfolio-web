@@ -861,17 +861,17 @@ img {
 .work-cards-track {
   display: flex;
   align-items: center;
-  gap: clamp(20px, 3vw, 40px);
+  gap: clamp(20px, 2.5vw, 36px);
   width: max-content;
   height: 100%;
-  padding: 70px 40px 0;
+  padding: 70px max(40px, calc((100% - min(72vw, 760px)) / 2)) 0;
   will-change: transform;
 }
 
 .work-card {
   position: relative;
-  flex: 0 0 min(82vw, 900px);
-  width: min(82vw, 900px);
+  flex: 0 0 min(72vw, 760px);
+  width: min(72vw, 760px);
   max-width: none;
   border-radius: 24px;
   background: transparent;
@@ -1833,8 +1833,8 @@ img {
   .work-card {
     position: relative !important;
     top: auto !important;
-    flex-basis: calc(100vw - 80px);
-    width: calc(100vw - 80px) !important;
+    flex-basis: min(84vw, 560px);
+    width: min(84vw, 560px) !important;
     max-width: none !important;
     scroll-snap-align: center;
   }
